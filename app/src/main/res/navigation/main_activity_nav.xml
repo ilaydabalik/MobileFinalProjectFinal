@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.mobilefinalprojectfinal.ui.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/urunDetayGecis"
+            app:destination="@id/urunDetayFragment" />
+        <action
+            android:id="@+id/homeToSepet"
+            app:destination="@id/sepetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/urunDetayFragment"
+        android:name="com.example.mobilefinalprojectfinal.ui.fragment.UrunDetayFragment"
+        android:label="fragment_urun_detay"
+        tools:layout="@layout/fragment_urun_detay" >
+        <action
+            android:id="@+id/sepetGecis"
+            app:destination="@id/sepetFragment" />
+        <argument
+            android:name="food"
+            app:argType="com.example.mobilefinalprojectfinal.data.entity.Foods" />
+    </fragment>
+    <fragment
+        android:id="@+id/sepetFragment"
+        android:name="com.example.mobilefinalprojectfinal.ui.fragment.SepetFragment"
+        android:label="fragment_sepet"
+        tools:layout="@layout/fragment_sepet" >
+        <argument
+            android:name="foodSepete"
+            app:argType="com.example.mobilefinalprojectfinal.data.entity.Foods" />
+    </fragment>
+</navigation>
